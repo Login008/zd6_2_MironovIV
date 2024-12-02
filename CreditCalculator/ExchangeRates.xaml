@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CreditCalculator.ExchangeRates"
+             Title="Курсы валют">
+    <ContentPage.Resources>
+        <StyleSheet Source="styles.css">
+        </StyleSheet>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="10"
+                 Orientation="Horizontal">
+
+            <StackLayout Padding="5" HorizontalOptions="StartAndExpand">
+
+                <Label Text="Центробанк РФ:" FontSize="Small" HorizontalOptions="Center" />
+                <Label Text="USD: 80.000" />
+                <Label Text="EUR: 86.000" />
+
+
+            </StackLayout>
+
+            <StackLayout Padding="5" HorizontalOptions="EndAndExpand" WidthRequest="165">
+
+                <Label Text="Выбранная дата:" FontSize="Small" HorizontalOptions="Center" x:Name="label"/>
+                <DatePicker FontSize="Medium">
+                </DatePicker>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

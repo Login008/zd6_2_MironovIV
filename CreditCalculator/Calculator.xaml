@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CreditCalculator.Calculator"
+             Title="Кредитный калькулятор"
+             BackgroundColor="White">
+    <ContentPage.Resources>
+        <StyleSheet Source="styles.css" />
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto, *, *, *, Auto, Auto"
+          Margin="20">
+        
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*, *, *"
+              RowDefinitions="Auto, Auto, Auto" 
+              VerticalOptions="Center" 
+              Grid.RowSpan="3">
+            
+            <StackLayout Orientation="Horizontal" 
+                         Grid.Row="0" 
+                         Grid.ColumnSpan="3">
+                
+                <Label Text="Сумма кредита: " 
+                       StyleClass="label"/>
+                
+                <Entry StyleClass="input" 
+                       HorizontalOptions="EndAndExpand" 
+                       x:Name="sumView"/>
+                
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" 
+                         Grid.Row="1" 
+                         Grid.ColumnSpan="3">
+                
+                <Label Text="Срок (месяцев): " 
+                       StyleClass="label"/>
+                
+                <Entry StyleClass="input" 
+                       HorizontalOptions="EndAndExpand" 
+                       x:Name="termView"/>
+                
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" 
+                         Grid.Row="2" 
+                         Grid.ColumnSpan="3">
+                
+                <Label Text="Вид платежа: " 
+                       StyleClass="label"/>
+                
+                <Picker StyleClass="input" 
+                        HorizontalOptions="EndAndExpand" 
+                        x:Name="pickerView">
+                    
+                    <Picker.Items>
+                        <x:String>Аннуитетный</x:String>
+                        <x:String>Дифференцированный</x:String>
+                    </Picker.Items>
+                    
+                </Picker>
+                
+            </StackLayout>
+            
+        </Grid>
+
+        <Grid Grid.Row="2" 
+              ColumnDefinitions="Auto, *, Auto" 
+              VerticalOptions="Center" 
+              Margin="0,20,0,20">
+            
+            <Label Text="Процентная ставка:" 
+                   StyleClass="label" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="3"/>
+            
+            <Slider Minimum="0" 
+                    Maximum="100" 
+                    Value="50" 
+                    x:Name="sliderView"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.ColumnSpan="3" 
+                    Grid.Row="1"/>
+
+            <Label Text="{Binding Source={x:Reference sliderView}, Path=Value, StringFormat='{0:F1}%'}" 
+                   StyleClass="label" 
+                   Grid.Row="2" 
+                   Grid.ColumnSpan="3" 
+                   HorizontalTextAlignment="Center"/>
+            
+        </Grid>
+
+        <Grid Grid.Row="3" 
+              ColumnDefinitions="*, *, *" 
+              RowDefinitions="Auto, Auto, Auto" 
+              VerticalOptions="Center" 
+              Grid.RowSpan="3">
+            
+            <Label Text="Ежемесячный платёж: " 
+                   StyleClass="label" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="3" 
+                   x:Name="paymentLabel"/>
+            
+            <Label Text="Сумма: " 
+                   StyleClass="label" 
+                   Grid.Row="1" 
+                   Grid.ColumnSpan="3" 
+                   x:Name="sumLabel"/>
+            
+            <Label Text="Переплата: " 
+                   StyleClass="label" 
+                   Grid.Row="2" 
+                   Grid.ColumnSpan="3" 
+                   x:Name="repaymentLabel"/>
+            
+        </Grid>
+
+        <Button Text="Рассчитать" 
+                StyleClass="calculateButton" 
+                Grid.Row="5" 
+                Clicked="Calculate"/>
+
+    </Grid>
+</ContentPage>

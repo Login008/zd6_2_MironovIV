@@ -1,0 +1,81 @@
+^contentpage {
+    background-color: #2c2f34;
+}
+
+mainstack {
+    margin: 15;
+    padding: 15;
+}
+
+label {
+    color: white;
+}
+
+#header {
+    font-size: 32;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 50;
+}
+
+probel {
+    margin: 30;
+}
+
+entries {
+    background-color: white;
+    border: thin solid black;
+}
+
+button {
+    background-color: royalblue;
+    color: white;
+    font-size: 18;
+    padding: 10;
+    border-radius: 5;
+    text-align: center;
+    text-decoration-color: white;
+    text-transform: none;
+}
+
+ll {
+    margin-top: 15;
+}
+
+checkbox {
+    color: white;
+}
+
+remember {
+    text-decoration-color: white;
+}
+
+stacklayout label {
+    font-family: Verdana;
+}
+
+forgot {
+    text-decoration-color: white;
+    align-content: end;
+}
+
+body123 {
+    vertical-align: central;
+}
+
+.input {
+    font-size: 16;
+    padding: 10;
+    background-color: #F8F8F8;
+    margin-bottom: 10;
+    color: black;
+    width: 190;
+}
+
+.label {
+    font-size: 16;
+    padding: 5;
+    margin-bottom: 5;
+    color: black;
+}

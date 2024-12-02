@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage   
+    xmlns="http://xamarin.com/schemas/2014/forms"   
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"   
+    x:Class="CreditCalculator.MainPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="styles.css" />
+    </ContentPage.Resources>
+    <StackLayout StyleId="body" Margin = "20">
+        <Label x:Name="header" StyleId="header" HorizontalOptions="Center" Text="Welcome"/>
+        <Entry x:Name="Login" Placeholder="Username"  StyleClass="input" BackgroundColor="#FFFFFF"  />
+        <Entry x:Name="Password" Placeholder="Password" IsPassword="True" StyleClass="input" BackgroundColor="#FFFFFF" />
+        <Button Text="Sign In" StyleClass="button" Clicked="GoToCalculator"/>
+
+
+        <Grid ColumnSpacing="0" RowSpacing="0" x:Name="das">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                <CheckBox  x:Name="checkBox" StyleClass="checkbox"/>
+                <Label Text="Remember me" VerticalOptions="CenterAndExpand" StyleClass="remember"/>
+            </StackLayout>
+
+            <Label Text="I forgot!" StyleClass="forgot" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.Column="3"/>
+
+
+        </Grid>
+
+    </StackLayout>
+</ContentPage>
